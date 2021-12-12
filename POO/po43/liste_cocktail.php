@@ -51,7 +51,7 @@ $cocktails = json_decode($json,true);
       echo "<tr>";
       echo "<td>".$cocktail['idDrink']."</td>";
       echo "<td>".$cocktail['strDrink']."</td>";
-      echo "<td><a href=\"cocktail_details.php?id=".$cocktail['idDrink']."\">".$cocktail['strDrink']."</a></td>";
+      echo "<td><a href=\"details_cocktail.php?id=".$cocktail['idDrink']."\">".$cocktail['strDrink']."</a></td>";
       echo "</tr>";
   }
   ?>
