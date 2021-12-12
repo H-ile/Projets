@@ -1,58 +1,61 @@
 <?php
-
-/**
- * po43 : liste des Cocktails
- */
-
+$lettre = isset($_GET['lettre']) ? $_GET['lettre'] : NULL;
 // Requête vers l'API
-$json = file_get_contents("https://www.thecocktaildb.com/api/json/v1/1/search.php?f=s");
-$tableau = json_decode($json, true);
-
-//echo "<pre>";
-//print_r($tableau);
-//echo "</pre>";
-
-$rows = $tableau['drinks'];
+$json = file_get_contents("https://www.thecocktaildb.com/api/json/v1/1/search.php?f=".$lettre);
+$cocktails = json_decode($json,true);
 
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>po43 - The Cocktail DB</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>po43</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
 </head>
 
 <body>
-    <h1>po43 - The Cocktail DB</h1>
-    <h2>Liste des Coktails (API)</h2>
-    <?php include "menu.php"; ?>
-    <p>Selectionner la première lettre</p>
-    <select name="lettre" id="lettre" onchange="this.form.submit()">
-    
-    </select>
-    <table>
-        <caption>Liste des Cocktails</caption>
-        <tr>
-            <th>ID</th>
-            <th>Nom</th>
-            <th>Détails</th>
-        </tr>
-
+  <h1>po43</h1>
+  <h2>Liste des cocktails</h2>
+  <?php include "menu.php"; ?>
+  <p>Sélectionnez la première lettre
+    <form action="<?= $_SERVER['PHP_SELF'] ?>" method="GET">
+      <select name="lettre" id="lettre" onchange="this.form.submit()">
         <?php
-        foreach ($rows as $value) {
-            echo '<tr>';
-            echo '<td>' . $value['idDrink'] . '</td>';
-            echo '<td>' . $value['strDrink'] . '</td>';
-            echo '<td><a href="cocktail_details.php?nom=' . $value['strDrink'] . '">' . $value['strDrink'] . '</a></td>';
-            echo "</tr>";
+        $selected = NULL;
+        foreach(array_merge(range(1, 9), range('A', 'Z')) as $char){
+          if($lettre == $char){
+            $selected = "selected";
+          }else{
+            $selected = null;
+          }
+          if($char != 8){
+            echo '<option value="'.$char.'" '.$selected.'>'.$char.'</option>';
+          }
+          
         }
         ?>
-        <table>
-            <p>Il y a <?php echo count($rows); ?> Cocktail(s)</p>
+      </select>
+    </form>
+  </p><br>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Détails</th>
+    </tr>
+    <?php
+  foreach ($cocktails["drinks"] as $cocktail) {
+      echo "<tr>";
+      echo "<td>".$cocktail['idDrink']."</td>";
+      echo "<td>".$cocktail['strDrink']."</td>";
+      echo "<td><a href=\"cocktail_details.php?id=".$cocktail['idDrink']."\">".$cocktail['strDrink']."</a></td>";
+      echo "</tr>";
+  }
+  ?>
+    <table>
+      <p>Il y a <?= count($cocktails["drinks"]); ?> cocktail(s)</p>
 </body>
-
 </html>
