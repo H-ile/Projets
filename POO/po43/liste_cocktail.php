@@ -25,14 +25,14 @@ $cocktails = json_decode($json,true);
       <select name="lettre" id="lettre" onchange="this.form.submit()">
         <?php
         $selected = NULL;
-        foreach(array_merge(range(1, 9), range('A', 'Z')) as $char){
-          if($lettre == $char){
+        foreach(array_merge(range(1, 9), range('A', 'Z')) as $chaine){
+          if($lettre == $chaine){
             $selected = "selected";
           }else{
             $selected = null;
           }
-          if($char != 8){
-            echo '<option value="'.$char.'" '.$selected.'>'.$char.'</option>';
+          if($chaine != 8){
+            echo '<option value="'.$chaine.'" '.$selected.'>'.$chaine.'</option>';
           }
           
         }
