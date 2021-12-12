@@ -45,7 +45,7 @@ $rows = $tableau['drinks'];
       echo '<td><a href="ingredient_details.php?nom='.$value['strIngredient1'].'">'.$value['strIngredient1'].'</a></td>';
       echo "</tr>";
   }
-  ?>
+  ?>oui
     <table>
       <p>Il y a <?php echo count($rows); ?> ingrédient(s)</p>
 </body>
