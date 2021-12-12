@@ -1,0 +1,39 @@
+<!-- js12 : table de multiplication -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js12 : table de multiplication</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <h1>js12 : table de multiplication</h1>
+    <div id="ici"></div>
+    <script>
+        /* Calcule une table de multiplication */
+        var nb = 0;
+        var i = 0;
+        var resultat = 0;
+
+        // Saisie + conversion en nombre
+        nb = parseInt(prompt("Saisissez un nombre"));
+
+        // Calculs 
+        message = "<p>-- Table de " + nb + " --</p>";
+        for (i = 1; i <= 10; i++) {
+            resultat = i * nb;
+            // message = message + "<p>" + nb + " x " + i + " = " + resultat + "</p>";
+            message += "<p>" + nb + " x " + i + " = " + resultat + "</p>";
+        }
+
+        // Affichage
+        document.getElementById("ici").innerHTML = message;
+    </script>
+</body>
+
+</html>

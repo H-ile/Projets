@@ -1,0 +1,37 @@
+<!-- js01b : hello world en 4 sorties -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js01b : hello world en 4 sorties</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <h1>js01b : hello world en 4 sorties</h1>
+    <p id="ici"></p>
+    <!-- Affiche hello world dans 4 sorties différentes -->
+    <script>
+        /* Affichage dans le paragraphe ci-dessus */
+        document.getElementById("ici").innerHTML = "Hello World avec innerHTML";
+    </script>
+    <script>
+        /* Affichage à l'endroit du script (dangereux) */
+        document.write("<p>Hello World avec document.write</p>");
+    </script>
+    <script>
+        /* Affichage dans une pop-up (intrusif) */
+        window.alert("Hello World avec window.alert");
+    </script>
+    <script>
+        /* Affichage dans la console du navigateur (discret, uniquement pour le debug) */
+        console.log("Hello World avec console.log");
+    </script>
+    </script>
+</body>
+
+</html>

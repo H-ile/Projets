@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1573033294 source:d:\jef\codblocks\c40b_corrige\c40b\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<locale.h>
+

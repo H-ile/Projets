@@ -1,0 +1,66 @@
+<!-- je07c : état de l'eau sans formulaire -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js07c : état de l'eau sans formulaire</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <h1>js07c : état de l'eau sans formulaire</h1>
+    <form action="" onsubmit = "event.preventDefault()" >
+        <p><label for="saisie">Tapez la température</label><br />
+            <input type="number" name="saisie" id="saisie" value="0" onchange="ma_fonction()">
+            <button type="button" onclick="plus_dix()">+10</button>&nbsp;<button type="button"
+                onclick="moins_dix()">-10</button>
+        </p>
+    </form>
+    <div id="ici"></div>
+    <script>
+        function plus_dix() {
+            var saisie;
+            saisie = parseInt(document.getElementById("saisie").value);
+            saisie = saisie + 10;
+            document.getElementById("saisie").value = saisie;
+            document.getElementById("saisie").onchange();  // Déclenche l'événement
+        }
+        function moins_dix() {
+            var saisie;
+            saisie = parseInt(document.getElementById("saisie").value);
+            saisie = saisie - 10;
+            document.getElementById("saisie").value = saisie;
+            document.getElementById("saisie").onchange(); // Déclenche l'événement
+        }
+
+        function ma_fonction() {
+            var temperature = 0;
+            var etat = "???";   // Valeur par défaut
+
+            // Récupère la saisie + conversion en nombre
+            temperature = parseInt(document.getElementById("saisie").value);
+
+            // Calculs
+            if (temperature < 0) {
+                etat = "solide";
+            } else {
+                if (temperature < 100) {
+                    etat = "liquide";
+                } else {
+                    etat = "gazeux";
+                }
+            }
+
+            // Affichage
+            message = "<p>Température : " + temperature + "</p>";
+            message += "<p>Etat : " + etat + "</p>";
+            document.getElementById("ici").innerHTML = message;
+        }
+    </script>
+</body>
+
+</html>

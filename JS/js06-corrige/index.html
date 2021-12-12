@@ -1,0 +1,49 @@
+<!-- js06 : plus grand nombre parmi trois -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js06 : plus grand nombre parmi trois</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <h1>js06 : plus grand nombre parmi trois</h1>
+    <div id="ici"></div>
+    <script>
+        /* Calcule le plus grand nombre parmi trois */
+        var a = 0;
+        var b = 0;
+        var c = 0;
+        var maxi = 0;
+
+        // Saisie + conversion en nombre
+        a = parseFloat(prompt("Saisissez a"));
+        b = parseFloat(prompt("Saisissez b"));
+        c = parseFloat(prompt("Saisissez c"));
+
+        // Calculs 
+        if (a > b) {
+            maxi = a;
+        } else {
+            maxi = b; // a<=b
+        }
+        if (c > maxi) {
+            maxi = c;
+        }
+
+        // Affichage
+        message = "<p>a : " + a + "</p>";
+        message += "<p>b : " + b + "</p>";
+        message += "<p>c : " + c + "</p>";
+        message += "<p>maxi : " + maxi + "</p>";
+
+        document.getElementById("ici").innerHTML = message;
+    </script>
+</body>
+
+</html>Q

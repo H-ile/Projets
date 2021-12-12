@@ -1,0 +1,63 @@
+<!-- js09 : IMC -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js09 : IMC</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <h1>js09 : IMC</h1>
+    <div id="ici"></div>
+    <script>
+        var taille = 0;  // en mètres
+        var masse = 0;  // en kg
+        var indice = 0;
+        var interpretation = "???";   // Valeur par défaut
+
+        // Saisie + conversion en nombre
+        taille = parseFloat(prompt("Saisissez la taille (m)"));
+        masse = parseFloat(prompt("Saisissez la masse (kg)"));
+
+        // Calculs
+        indice = masse / (taille * taille);
+        indice = Math.round(indice * 100) / 100;
+
+        if (indice < 16.5) {
+            interpretation = "dénutrition ou famine";
+        }
+        if (indice >= 16.5 && indice < 18.5) {
+            interpretation = "maigreur";
+        }
+        if (indice >= 18.5 && indice < 25) {
+            interpretation = "corpulence normale";
+        }
+        if (indice >= 25 && indice < 30) {
+            interpretation = "surpoids";
+        }
+        if (indice >= 30 && indice < 35) {
+            interpretation = "obésité modérée";
+        }
+        if (indice >= 35 && indice < 40) {
+            interpretation = "obésité sévère";
+        }
+        if (indice >= 40) {
+            interpretation = "obésité morbide ou massive";
+        }
+
+        // Affichage
+        message = "<p>Taille : " + taille + "</p>";
+        message += "<p>Masse : " + masse + "</p>";
+        message += "<p>Indice : " + indice + "</p>";
+        message += "<p>Interprétation : " + interpretation + "</p>";
+        document.getElementById("ici").innerHTML = message;
+
+    </script>
+</body>
+
+</html>

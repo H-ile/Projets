@@ -1,0 +1,43 @@
+<!-- js02b : conversion euro/dollar avec un formulaire -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js02b : conversion euro/dollar avec un formulaire</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <h1>js02b : conversion euro/dollar avec un formulaire</h1>
+    <form action="">
+        <label for="saisie">Tapez un nombre</label><br />
+        <input type="text" name="saisie" id="saisie">
+        <button type="button" onclick="ma_fonction()">Submit</button>
+    </form>
+    <p id="ici"></p>
+    <script>
+        function ma_fonction(){
+            /* Convertit des euros en dollar */
+            var euro = 0;
+            var dollar = 0;
+            var message;
+
+            // Récupère la saisie + conversion en nombre
+            euro = parseFloat(document.getElementById("saisie").value);
+
+            // Calculs et arrondi à 2 décimales
+            dollar = euro / 0.88351;
+            dollar = Math.round(dollar * 100) / 100;
+
+            // Affichage
+            message = "Montant en euro : " + euro + "<br/>" + "Montant en dollar : " + dollar;
+            document.getElementById("ici").innerHTML = message;
+        }
+    </script>
+</body>
+
+</html>

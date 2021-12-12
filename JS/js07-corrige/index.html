@@ -1,0 +1,42 @@
+<!-- js07 : état de l'eau -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js07 : état de l'eau</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <h1>js07 : état de l'eau</h1>
+    <div id="ici"></div>
+    <script>
+        var temperature = 0;
+        var etat="???";   // Valeur par défaut
+        
+        // Saisie + conversion en nombre
+        temperature = parseFloat(prompt("Saisissez la température"));
+        
+        // Calculs
+        if (temperature < 0) {
+            etat = "solide";
+        } else {
+            if (temperature <100) {
+                etat = "liquide";
+            } else {
+                etat = "gazeux";
+            }
+        }
+
+        // Affichage
+        message = "<p>Température : " + temperature + "</p>";
+        message += "<p>Etat : " + etat + "</p>";
+        document.getElementById("ici").innerHTML = message;
+    </script>
+</body>
+
+</html>

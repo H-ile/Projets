@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* Template CSS */
+
+table, th, td {
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  border-collapse: collapse;
+}
+
+body {
+  margin-left:20px;
+}
+
+th, td  {
+   background-color: #E0F07F; /* vert clair */
+   width:20px;
+   padding: 5px;
+   text-align:center;
+}

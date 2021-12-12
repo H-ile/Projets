@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <h1>Ht49 : formulaire de contact</h1>
+    <form id="formulaire" action="contact.php" method="post">
+        <label for="titre">Titre</label> <br>
+        <select name="titre" id="titre">
+            <option value="Homme">Hommme</option>
+            <option value="Femme">Femme</option>
+        </select> <br>
+        <label for="nom">Nom</label> <br>
+        <input type="text" id="nom" name="nom" value="nom" /> <br>
+        <label for="premon">prénom</label><br>
+        <input type="text" id="premon" name="premon" value="premon" /><br>
+        <input name="urgent" type="checkbox" id="urgent" value="urgent" />
+        <label for="urgent">urgent</label><br>
+        <label for="msg">message</label><br>
+        <textarea name="msg" id="msg" rows="10" cols="50">message</textarea><br>
+        <input type="submit" value="Envoyer">
+        <input type="reset" value="Réinitialiser">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1538379697 source:d:\jef\codblocks\c25\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
+1573036842 source:d:\jef\codblocks\c25_corrige\c25\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<locale.h>
+

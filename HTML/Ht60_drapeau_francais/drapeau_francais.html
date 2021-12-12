@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>Ht60 : drapeau français</h1>
+
+    <img id="drapeaufr" width="150" height="99" src="drapeaufr.PNG" alt="drapeaufr">
+
+    <p>Canvas:</p>
+
+    <canvas id="myCanvas" width="250" height="200s" style="border:1px solid black;">
+    </canvas>
+
+    <script>
+        window.onload = function () {
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+            var img = document.getElementById("drapeaufr");
+            ctx.drawImage(img, 50, 50);
+        };
+    </script>
+
+</body>
+
+</html>
