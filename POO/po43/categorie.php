@@ -36,7 +36,6 @@ $rows = $tableau['drinks'];
       echo '<tr>';
       echo '<td>'.$value['strCategory'].'</td>';
       echo '<td><a href="categorie_details.php?nom='.$value['strCategory'].'">'.$value['strCategory'].'</a></td>';
-      
       echo "</tr>";
   }
   ?>

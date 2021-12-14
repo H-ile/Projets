@@ -17,6 +17,7 @@ $cocktails = json_decode($json,true);
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>po43</title>
   <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  
 </head>
 
 <body>
@@ -28,6 +29,7 @@ $cocktails = json_decode($json,true);
       <th>ID</th>
       <th>Nom</th>
       <th>Détails</th>
+      <th>image</th>
     </tr>
     <?php
   foreach ($cocktails["drinks"] as $cocktail) {
@@ -35,6 +37,7 @@ $cocktails = json_decode($json,true);
       echo "<td>".$cocktail['idDrink']."</td>";
       echo "<td>".$cocktail['strDrink']."</td>";
       echo "<td><a href=\"details_cocktail.php?id=".$cocktail['idDrink']."\">".$cocktail['strDrink']."</a></td>";
+      echo '<td><img src="'.$cocktail['strDrinkThumb'].'" height="100" width="100" alt="oui" srcset=""></td>';
       echo "</tr>";
   }
   ?>
