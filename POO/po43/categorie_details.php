@@ -1,10 +1,10 @@
 <?php
-$lettre = isset($_GET['lettre']) ? $_GET['lettre'] : NULL;
+$nom = isset($_GET['nom']) ? $_GET['nom'] : NULL;
 // Requête vers l'API
-$json = file_get_contents("https://www.thecocktaildb.com/api/json/v1/1/search.php?f=".$lettre);
+$json = file_get_contents("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=".$nom);
 $cocktails = json_decode($json,true);
-//secho "<pre>";
-//print_r($tableau);
+//echo "<pre>";
+//print_r($cocktails);
 //echo "</pre>";
 
 ?>
@@ -21,28 +21,8 @@ $cocktails = json_decode($json,true);
 
 <body>
   <h1>po43</h1>
-  <h2>Liste des cocktails</h2>
+  <h2>details categorie</h2>
   <?php include "menu.php"; ?>
-  <p>Sélectionnez la première lettre
-    <form action="<?= $_SERVER['PHP_SELF'] ?>" method="GET">
-      <select name="lettre" id="lettre" onchange="this.form.submit()">
-        <?php
-        $selected = NULL;
-        foreach(array_merge(range(1, 9), range('A', 'Z')) as $chaine){
-          if($lettre == $chaine){
-            $selected = "selected";
-          }else{
-            $selected = null;
-          }
-          if($chaine != 8){
-            echo '<option value="'.$chaine.'" '.$selected.'>'.$chaine.'</option>';
-          }
-          
-        }
-        ?>
-      </select>
-    </form>
-  </p><br>
   <table>
     <tr>
       <th>ID</th>
