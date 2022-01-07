@@ -2,11 +2,11 @@
  * Classe Voiture
  *
  */
-package java43;
+package Java43;
 
 /**
  *
- * @author jef
+ * @author Achille
  */
 public class Voiture {
 

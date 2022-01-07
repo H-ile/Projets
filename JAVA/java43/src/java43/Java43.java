@@ -1,11 +1,11 @@
 /*
  * ja43 : masquage d'une propriété
  */
-package java43;
+package Java43;
 
 /**
  *
- * @author jef
+ * @author Achille
  */
 public class Java43 {
 
