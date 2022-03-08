@@ -22,8 +22,8 @@ public class Personne {
     }
 
     Personne() {
-        set_nom("blanc");
-        set_prenom("atengo");
+        set_nom("macqueen");
+        set_prenom("flash");
     }
 
 // Getter
