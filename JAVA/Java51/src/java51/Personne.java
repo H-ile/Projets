@@ -12,9 +12,9 @@ package java51;
 public class Personne {
     // Propriétés
 
-    public String nom;
-    public String prenom;
-// Constructeur
+    private String nom;
+    private String prenom;
+    // Constructeur
 
     Personne(String prenom, String nom) {
         this.prenom = prenom;
@@ -22,11 +22,11 @@ public class Personne {
     }
 
     Personne() {
-        set_nom("macqueen");
+        set_nom("mcqueen");
         set_prenom("flash");
     }
 
-// Getter
+    // Getter
     public String get_nom() {
         return nom;
     }
@@ -34,7 +34,7 @@ public class Personne {
     public void set_nom(String nom) {
         this.nom = nom;
     }
-// Setter
+    // Setter
 
     public String get_prenom() {
         return prenom;
@@ -43,12 +43,12 @@ public class Personne {
     public void set_prenom(String prenom) {
         this.prenom = prenom;
     }
-// Retourne le prénom et le nom
+    // Retourne le prénom et le nom
 
     public String get_nom_complet() {
         return this.prenom + " " + this.nom;
     }
-// Ne retourne rien
+    // Ne retourne rien
 
     public void afficher() {
         System.out.println(this.prenom);
