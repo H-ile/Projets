@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Java51b;
+package java51b;
 
 import java.util.ArrayList;
 
 /**
  *
- * @author MA500484
+ * @author ramiarj
  */
 public class Java51b {
 
