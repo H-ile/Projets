@@ -1,7 +1,3 @@
-/**
- * Terminator
- * Source : https://en.wikipedia.org/wiki/Terminator_(franchise)
- */
 package Java52b;
 
 import java.util.ArrayList;
