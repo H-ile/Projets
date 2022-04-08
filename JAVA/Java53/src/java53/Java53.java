@@ -19,19 +19,32 @@ public class Java53 {
         boisson1.set_est_alcoolise(false);
         boisson1.set_categorie("eau");
         boisson1.afficher();
-        Boisson boisson2 = new Boisson("Cabernet", 0.75);
-        boisson2.set_est_alcoolise(true);
-        boisson2.set_categorie("vin");
-        boisson2.afficher();
-        Boisson boisson3 = new Boisson("Multifruits", 1.5);
-        boisson3.set_est_alcoolise(false);
-        boisson3.set_categorie("jus");
-        boisson3.afficher();
-        Boisson boisson4 = new Boisson("Corona", 0.33);
-        boisson4.set_est_alcoolise(true);
-        boisson4.set_categorie("biere"); // Erreur
-        boisson4.set_contenance(-10.0); // Erreur
-        boisson4.afficher();
+        
+        Vin vin1 = new Vin("Cabernet", 0.75, "rosé");
+        vin1.set_est_alcoolise(true);
+        vin1.set_categorie("vin");
+        vin1.afficher();
+        
+        Vin vin2 = new Vin("Monastrell", 0.75, "noir"); // Erreur
+        vin2.set_est_alcoolise(true);
+        vin2.set_categorie("vin");
+        vin2.afficher();
+        
+        Jus jus1 = new Jus("Jus d'ananas", 0.5, "ananas");
+        jus1.set_est_alcoolise(false);
+        jus1.set_categorie("jus");
+        jus1.afficher();
+
+        Jus jus2 = new Jus("Jus de canneberges", 1.5, "canneberges");
+        jus2.set_est_alcoolise(false);
+        jus2.set_categorie("jus");
+        jus2.set_emballage(2); // bouteille verre
+        jus2.afficher();
+        
+        Jus jus3 = new Jus("Jus de citron", 2.5, "citron");
+        jus3.set_est_alcoolise(false);
+        jus3.set_categorie("jus");  
+        jus2.set_emballage(99); // Er
     }
 
 }
