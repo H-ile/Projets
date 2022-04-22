@@ -1,9 +1,4 @@
 <?php
-/**
-* Page d'accueil
-* Basé sur le cas "Music"
-* @author jef
-*/
 include 'init.php';
 ?>
 
